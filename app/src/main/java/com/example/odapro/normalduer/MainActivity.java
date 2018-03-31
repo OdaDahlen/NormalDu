@@ -34,7 +34,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        loginbutton = (Button) findViewById(R.id.loginbutton);
+        loginbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestEmail()
+                        .build();
+                mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+            }
+        });
 
 
         //Data endata = new Data(1, "navnet", "adressen");
